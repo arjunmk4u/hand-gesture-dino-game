@@ -1,8 +1,10 @@
 This is a program to automate dino game. Basically this program automates the system.
 Dependendies used in this programs:
-    - cv2 (library from opencv.) - Open source python package.
-    - mediapipe - Hand detection model
-    - pyaautogui - Library to automate system
+    <ul>
+        <li>- cv2 (library from opencv.) - Open source python package.</li>
+        <li>- mediapipe - Hand detection model</li>
+        <li>- pyaautogui - Library to automate system</li>
+    </ul>
 Install these packages for run the code.
 run the setup.sh file fisrt.
 if that file not works, see the requirements.txt file and install them one by one.
