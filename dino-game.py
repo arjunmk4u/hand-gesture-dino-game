@@ -23,8 +23,18 @@ mpDraw = mp.solutions.drawing_utils
 fingerCordinates = [(8,6), (12,10), (16,14), (20,18)]
 thumbCordinates = (4,2)
 
+
+# space press function
+key = False
+def space_pressed():
+    if key == True:
+        pag.keyDown('SPACE')
+    else:
+        pag.keyUp('SPACE')
+
 #main while loop
 while True:
+    space_pressed()
     success, img = cap.read()                              #capturing video from webcam
     # imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)        #converting colors (optional)
     results = hands.process(img)
@@ -52,11 +62,10 @@ while True:
         for coordinate in fingerCordinates:
 
             if handPoints[coordinate[0]][1] < handPoints[coordinate[1]][1]:
-                upCount += 1
-                pag.keyUp('SPACE')
+                key = False
                 # print("Hand open")
             else:
-                pag.keyDown('SPACE')
+                key = True
                 # print("Hand Closed")
 
 
